@@ -1,8 +1,17 @@
 package com.bridgelabz;
 
 public class Maximum {
+     public static <E extends Comparable<E>> E getMax(E firstValue, E secondValue, E thirdValue) {
+        E max = firstValue;
+        if (secondValue.compareTo(max) > 0)
+            max = secondValue;
+        if (thirdValue.compareTo(max) > 0)
+            max = thirdValue;
 
-    public Integer getMax(Integer firstValue,Integer secondValue,Integer thirdValue){
+        return max;
+    }
+
+    /*public Integer getMax(Integer firstValue,Integer secondValue,Integer thirdValue){
         Integer max = firstValue;
         if (secondValue.compareTo(max) > 0)
             max = secondValue;
@@ -30,7 +39,8 @@ public class Maximum {
             strMax = str3;
 
         return strMax;
-    }
+    }*/
+
 
 
 }
