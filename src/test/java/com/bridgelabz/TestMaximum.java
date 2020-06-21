@@ -40,5 +40,22 @@ public class TestMaximum {
         Float expected = 5.6f ;
         Assert.assertEquals(expected,maximum.getMax(1.2f,4.2f,5.6f));
     }
+
+    @Test
+    public void givenFrstStringGreater_WhenLargest_ShouldReturnTrue() {
+        String expected = "Peach" ;
+        Assert.assertEquals(expected, maximum.getMax("Peach","Apple","Banana"));
+    }
+
+    @Test
+    public void givenSecondStringGreater_WhenLargest_ShouldReturnTrue() {
+        String expected = "Peach" ;
+        Assert.assertEquals(expected, maximum.getMax("Apple","Peach","Banana"));
+    }
+    @Test
+    public void givenThirdStringGreater_WhenLargest_ShouldReturnTrue() {
+        String expected = "Peach" ;
+        Assert.assertEquals(expected, maximum.getMax("Apple","Banana","Peach"));
+    }
 }
 
