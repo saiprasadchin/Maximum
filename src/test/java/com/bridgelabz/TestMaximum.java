@@ -48,5 +48,20 @@ public class TestMaximum {
     public void givenStringThirdGreater_WhenLargest_ShouldReturnTrue() {
         Assert.assertEquals("Peach", new Maximum("Banana", "Apple", "Peach").getMax());
     }
+    @Test
+    public void givenValueGreaterThan3IntegerValue_WhenLargest_ShouldReturnTrue() {
+        Assert.assertEquals(25, new Maximum(20, 6, 10, 25).getMax());
+    }
+
+    @Test
+    public void givenValueGreaterThan3FloatValue_WhenLargest_ShouldReturnTrue() {
+        Assert.assertEquals(25.5f, new Maximum(10.4f, 6.7f, 25.5f, 20.2f).getMax());
+    }
+
+    @Test
+    public void givenValueGreaterThan3StringValue_WhenLargest_ShouldReturnTrue() {
+        Assert.assertEquals("Peach", new Maximum("Banana", "Apple", "Peach", "Payaya", "Grapes", "Mango").getMax());
+
+    }
 }
 
