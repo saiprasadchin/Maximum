@@ -23,5 +23,22 @@ public class TestMaximum {
         Integer expected = 90 ;
         Assert.assertEquals(expected,maximum.getMax(40,10,90));
     }
+    @Test
+    public void givenFloatFirstNumberGreater_WhenLargest_ShouldReturnTrue() {
+        Float expected = 5.6f ;
+        Assert.assertEquals(expected,maximum.getMax(5.6f,4.2f,2.2f));
+    }
+
+    @Test
+    public void givenFloatSecondNumberGreater_WhenLargest_ShouldReturnTrue() {
+        Float expected = 5.6f ;
+        Assert.assertEquals(expected,maximum.getMax(2.2f,5.6f,4.3f));
+    }
+
+    @Test
+    public void givenFloatThirdNumberGreater_WhenLargest_ShouldReturnTrue() {
+        Float expected = 5.6f ;
+        Assert.assertEquals(expected,maximum.getMax(1.2f,4.2f,5.6f));
+    }
 }
 
