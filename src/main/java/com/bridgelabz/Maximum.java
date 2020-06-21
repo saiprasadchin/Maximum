@@ -21,4 +21,16 @@ public class Maximum {
 
         return max;
     }
+
+    public String getMax(String str1,String str2,String str3){
+        String strMax = str1;
+        if (str2.compareTo(strMax) > 0)
+            strMax = str2;
+        if (str3.compareTo(strMax) > 0)
+            strMax = str3;
+
+        return strMax;
+    }
+
+
 }
