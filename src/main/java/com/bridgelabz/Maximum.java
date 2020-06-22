@@ -1,35 +1,19 @@
 package com.bridgelabz;
 
+import java.util.Arrays;
+
 public class Maximum<E extends Comparable<E>> {
-    E firstValue;
-    E secondValue;
-    E thirdValue;
     E[] extraParamaters;
 
-    public Maximum(E firstValue, E secondValue, E thirdValue,E... extraParamaters) {
-        this.firstValue = firstValue;
-        this.secondValue = secondValue;
-        this.thirdValue = thirdValue;
+    public Maximum(E... extraParamaters) {
         this.extraParamaters = extraParamaters;
     }
-    public static <E extends Comparable<E>> E getMax(E firstValue, E secondValue, E thirdValue,E... extraParamaters) {
-        E max = firstValue;
-        if (secondValue.compareTo(max) > 0)
-            max = secondValue;
-        if (thirdValue.compareTo(max) > 0)
-            max = thirdValue;
-        if (extraParamaters.length != 0) {
-            for (E extraParamater :
-                    extraParamaters) {
-                if (extraParamater.compareTo(max) > 0) {
-                    max = extraParamater;
-                }
-            }
-        }
-        return max;
+    public static <E extends Comparable<E>> E getMax(E... extraParamaters) {
+        Arrays.sort(extraParamaters);
+        return (E) extraParamaters[extraParamaters.length - 1];
     }
     public <E extends Comparable<E>> E getMax() {
-        E max = (E) getMax(firstValue, secondValue, thirdValue,extraParamaters);
+        E max = (E) getMax(extraParamaters);
         printMax(max);
         return max;
     }
