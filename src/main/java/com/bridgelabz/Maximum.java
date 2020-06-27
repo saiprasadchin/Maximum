@@ -8,12 +8,15 @@ public class Maximum<E extends Comparable<E>> {
     public Maximum(E... extraParamaters) {
         this.extraParamaters = extraParamaters;
     }
-    public static <E extends Comparable<E>> E getMax(E... extraParamaters) {
-        Arrays.sort(extraParamaters);
-        return (E) extraParamaters[extraParamaters.length - 1];
-    }
+
+    /**
+     * sort's values passed to it
+     * @param <E>
+     * @return max
+     */
     public <E extends Comparable<E>> E getMax() {
-        E max = (E) getMax(extraParamaters);
+        Arrays.sort(extraParamaters);
+        E max = (E) extraParamaters[extraParamaters.length - 1];
         printMax(max);
         return max;
     }
